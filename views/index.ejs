@@ -115,7 +115,7 @@
 
     <label>Telefone do indicador:</label>
     <input type="text" name="telefone_indicador">
-
+    <br><br>
     <fieldset>
       <legend>Profissionais de saúde consultados</legend>
 
@@ -134,7 +134,7 @@
       <label>Diagnóstico e tratamento:</label>
       <textarea name="diagnostico_1"></textarea>
 
-      <!-- Campos para um segundo profissional podem ser adicionados posteriormente -->
+      <button type="button" onclick="adicionarProfissional()">Adicionar outros</button>
     </fieldset>
 
     <label>Queixa principal:</label>
@@ -164,6 +164,70 @@
     <label>Resultados de exames por imagem (relacionados ao problema):</label>
     <textarea name="exames_imagem"></textarea>
   </div>
+
+  <div id="habitos" class="tab-content">
+    <fieldset>
+      <legend>Hábitos</legend>
+      <label><input type="checkbox" name="habitos[]" value="morder_unhas"> Morder unhas</label>
+      <label><input type="checkbox" name="habitos[]" value="mascar_chicletes"> Mascar chicletes</label>
+      <label><input type="checkbox" name="habitos[]" value="uso_telefone"> Uso contínuo de telefone</label>
+      <label><input type="checkbox" name="habitos[]" value="morder_objetos"> Morder objetos</label>
+      <label><input type="checkbox" name="habitos[]" value="uso_computador"> Uso contínuo de computador</label>
+      <label><input type="checkbox" name="habitos[]" value="morder_labios"> Morder lábios, língua ou bochechas</label>
+      <label><input type="checkbox" name="habitos[]" value="ficar_em_pe"> Alta permanência na posição de pé</label>
+      <label><input type="checkbox" name="habitos[]" value="ficar_sentado"> Alta permanência na posição sentada</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Sintomas (lado direito/esquerdo)</legend>
+      <label>Dores de cabeça frequentes:
+        <input type="checkbox" name="cefaleia_d" value="direito"> D
+        <input type="checkbox" name="cefaleia_e" value="esquerdo"> E
+      </label>
+      <label>Dor facial:
+        <input type="checkbox" name="dor_facial_d" value="direito"> D
+        <input type="checkbox" name="dor_facial_e" value="esquerdo"> E
+      </label>
+      <label>Dor ou barulho na mastigação:
+        <input type="checkbox" name="barulho_mastigacao_d" value="direito"> D
+        <input type="checkbox" name="barulho_mastigacao_e" value="esquerdo"> E
+      </label>
+      <!-- Adicione os demais sintomas conforme necessário -->
+    </fieldset>
+
+    <label>Outros sintomas / observações:</label>
+    <textarea name="outros_sintomas"></textarea>
+
+    <label>O que você achou que causou estes problemas?</label>
+    <textarea name="causa_problemas"></textarea>
+
+    <label>Há mais alguém com esses sintomas na sua família?</label>
+    <select name="sintomas_familia">
+      <option value="">Selecione</option>
+      <option value="sim">Sim</option>
+      <option value="nao">Não</option>
+    </select>
+
+    <label>Explique:</label>
+    <textarea name="explicacao_sintomas_familia"></textarea>
+
+    <label>Com que frequência ocorrem os sintomas?</label>
+    <input type="text" name="frequencia_sintomas">
+
+    <label>Quando ocorrem, quanto tempo duram?</label>
+    <input type="text" name="duracao_sintomas">
+
+    <label>Quando os sintomas são piores?</label>
+    <input type="text" name="pior_momento">
+
+    <label>O que faz os sintomas piorarem?</label>
+    <textarea name="fatores_agravantes"></textarea>
+
+    <label>O que os faz melhorar?</label>
+    <textarea name="fatores_melhoradores"></textarea>
+  </div>
+
+  
 </form>
 
 <%- include('partials/footer') %>

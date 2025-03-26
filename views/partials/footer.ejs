@@ -1,5 +1,28 @@
 <footer><br><p>A MS1 © <%= new Date().getFullYear() %> Project </p></footer>
 <script>
+  function adicionarProfissional() {
+    const container = document.getElementById('profissionais-container');
+    const novo = document.createElement('div');
+    novo.classList.add('profissional');
+    novo.innerHTML = `
+      <hr>
+      <label>Nome do profissional:</label>
+      <input type="text" name="profissional_nome[]">
+
+      <label>Especialidade:</label>
+      <input type="text" name="especialidade[]">
+
+      <label>Endereço:</label>
+      <input type="text" name="endereco_prof[]">
+
+      <label>Telefone:</label>
+      <input type="text" name="telefone_prof[]">
+
+      <label>Diagnóstico e tratamento:</label>
+      <textarea name="diagnostico[]"></textarea>
+    `;
+    container.appendChild(novo);
+  }
   const buttons = document.querySelectorAll('.tab-button');
   const tabs = document.querySelectorAll('.tab-content');
 
