@@ -15,31 +15,23 @@ body {
 .tab-content.active { display: block; }
 form { max-width: 800px; }
 label { display: block; margin-top: 15px; font-weight: bold; }
-input, select, textarea {
+select, textarea, input {
   width: 100%;
   padding: 8px;
   margin-top: 5px;
   box-sizing: border-box;
   border-radius: 8px;
 }
+
+fieldset > input[type="checkbox"],
+fieldset > input[type="radio"] {
+  width:fit-content;
+}
+
 h1 {
   text-align: center;
 }
 
 footer {
   text-align: center;
-}
-
-.checkbox-group {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 10px 20px;
-}
-
-.checkbox-group label {
-  display: flex;
-  align-items: flex-start; /* <-- isso é a chave */
-  gap: 8px;
-  font-weight: normal;
-  line-height: 1.4;
 }
