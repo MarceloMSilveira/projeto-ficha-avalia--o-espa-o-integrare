@@ -35,6 +35,77 @@
       document.getElementById(btn.dataset.tab).classList.add('active');
     });
   });
+  
+  function validarFormulario(event) {
+    const nome = document.querySelector('[name="nome"]');
+    const nascimento = document.querySelector('[name="data_nascimento"]');
+    const assinatura = document.querySelector('[name="assinatura_paciente"]');
+    const dataFinalizacao = document.querySelector('[name="data_finalizacao"]');
+    const telefoneCel = document.querySelector('[name="telefone_cel"]');
+    const telefoneRes = document.querySelector('[name="telefone_res"]');
+    const telefoneTrab = document.querySelector('[name="telefone_trab"]');
+    const email = document.querySelector('[name="email"]');
+    const cpf = document.querySelector('[name="cpf"]');
+
+    function validarTelefone(valor) {
+      return /^\(?\d{2}\)?[\s-]?\d{4,5}-?\d{4}$/.test(valor);
+    }
+
+    function validarEmail(valor) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(valor);
+    }
+
+    function validarCPF(cpf) {
+      cpf = cpf.replace(/[^\d]+/g, '');
+      if (cpf.length !== 11 || /^([0-9])\1{10}$/.test(cpf)) return false;
+      let soma = 0, resto;
+      for (let i = 1; i <= 9; i++) soma += parseInt(cpf.substring(i - 1, i)) * (11 - i);
+      resto = (soma * 10) % 11;
+      if (resto === 10 || resto === 11) resto = 0;
+      if (resto !== parseInt(cpf.substring(9, 10))) return false;
+      soma = 0;
+      for (let i = 1; i <= 10; i++) soma += parseInt(cpf.substring(i - 1, i)) * (12 - i);
+      resto = (soma * 10) % 11;
+      if (resto === 10 || resto === 11) resto = 0;
+      return resto === parseInt(cpf.substring(10, 11));
+    }
+
+    let mensagens = [];
+
+    if (!nome || nome.value.trim() === '') {
+      mensagens.push("O campo 'Nome completo' é obrigatório.");
+    }
+    if (!nascimento || nascimento.value.trim() === '') {
+      mensagens.push("O campo 'Data de nascimento' é obrigatório.");
+    }
+    if (!assinatura || assinatura.value.trim() === '') {
+      mensagens.push("O campo 'Assinatura do paciente' é obrigatório.");
+    }
+    if (!dataFinalizacao || dataFinalizacao.value.trim() === '') {
+      mensagens.push("O campo 'Data' é obrigatório.");
+    }
+
+    if (telefoneCel && !validarTelefone(telefoneCel.value)) {
+      mensagens.push("Telefone celular inválido. Use o formato (99)99999-9999.");
+    }
+    if (telefoneRes && telefoneRes.value && !validarTelefone(telefoneRes.value)) {
+      mensagens.push("Telefone residencial inválido.");
+    }
+    if (telefoneTrab && telefoneTrab.value && !validarTelefone(telefoneTrab.value)) {
+      mensagens.push("Telefone do trabalho inválido.");
+    }
+    if (email && !validarEmail(email.value)) {
+      mensagens.push("E-mail inválido.");
+    }
+    if (cpf && !validarCPF(cpf.value)) {
+      mensagens.push("CPF inválido.");
+    }
+
+    if (mensagens.length > 0) {
+      alert(mensagens.join('\n'));
+      event.preventDefault();
+    }
+  }
 </script>
 
 </body>

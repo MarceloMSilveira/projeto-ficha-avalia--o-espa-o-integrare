@@ -3,6 +3,11 @@
 <div class="tabs">
   <button class="tab-button active" data-tab="cadastrais">1. Informações Cadastrais</button>
   <button class="tab-button" data-tab="historico">2. Histórico Clínico</button>
+  <button class="tab-button" data-tab="habitos">3. Hábitos e Sintomas</button>
+  <button class="tab-button" data-tab="dores">4. Dores e Enfermidades</button>
+  <button class="tab-button" data-tab="psicossocial">5. Saúde Psicossocial</button>
+  <button class="tab-button" data-tab="sono">6. Sono e Estilo de Vida</button>
+  <button class="tab-button" data-tab="finalizacao">7. Assinatura e Finalização</button>
 </div>
 
 <form>
@@ -166,7 +171,7 @@
   </div>
 
   <div id="habitos" class="tab-content">
-    <fieldset>
+    <fieldset class="checkbox-group">
       <legend>Hábitos</legend>
       <label><input type="checkbox" name="habitos[]" value="morder_unhas"> Morder unhas</label>
       <label><input type="checkbox" name="habitos[]" value="mascar_chicletes"> Mascar chicletes</label>
@@ -177,7 +182,7 @@
       <label><input type="checkbox" name="habitos[]" value="ficar_em_pe"> Alta permanência na posição de pé</label>
       <label><input type="checkbox" name="habitos[]" value="ficar_sentado"> Alta permanência na posição sentada</label>
     </fieldset>
-
+    <br><br>
     <fieldset>
       <legend>Sintomas (lado direito/esquerdo)</legend>
       <label>Dores de cabeça frequentes:
@@ -227,7 +232,287 @@
     <textarea name="fatores_melhoradores"></textarea>
   </div>
 
-  
+  <div id="dores" class="tab-content">
+    <fieldset>
+      <legend>Efeito da dor diária</legend>
+      <label>Selecione o número que representa sua dor atual:</label>
+      <input type="range" name="dor_atual" min="0" max="10">
+    </fieldset>
+
+    <label>Nas últimas semanas, qual a intensidade média da dor?</label>
+    <input type="number" name="intensidade_media" min="0" max="10">
+
+    <label>Nos últimos 6 meses, como o problema afetou:</label>
+    <label>Trabalho (0 = nenhuma mudança, 10 = mudança extrema)</label>
+    <input type="number" name="impacto_trabalho" min="0" max="10">
+
+    <label>Atividades sociais e recreativas:</label>
+    <input type="number" name="impacto_sociais" min="0" max="10">
+
+    <label>Atividades domésticas:</label>
+    <input type="number" name="impacto_domesticas" min="0" max="10">
+
+    <fieldset>
+      <legend>Selecione o que você tem ou teve:</legend>
+      <label><input type="checkbox" name="condicoes[]" value="artrite_reumatoide"> Artrite reumatoide</label>
+      <label><input type="checkbox" name="condicoes[]" value="ulcera_colite"> Úlcera/colite</label>
+      <label><input type="checkbox" name="condicoes[]" value="cancer"> Câncer</label>
+      <label><input type="checkbox" name="condicoes[]" value="gastrite"> Gastrite</label>
+      <label><input type="checkbox" name="condicoes[]" value="osteoartrite"> Osteoartrite</label>
+      <label><input type="checkbox" name="condicoes[]" value="disturbios_nervosos"> Distúrbios nervosos</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Você tem:</legend>
+      <label><input type="checkbox" name="tem[]" value="articulacoes_rigidas"> Articulações inchadas, rígidas ou doloridas</label>
+      <label><input type="checkbox" name="tem[]" value="fadiga"> Cansaço e constante fadiga</label>
+      <label><input type="checkbox" name="tem[]" value="dores_gerais"> Dores generalizadas</label>
+      <label><input type="checkbox" name="tem[]" value="unhas_fragil"> Unhas quebram facilmente</label>
+      <label><input type="checkbox" name="tem[]" value="intolerancia_frio"> Intolerância ao frio</label>
+    </fieldset>
+  </div>
+
+  <div id="psicossocial" class="tab-content">
+    <fieldset>
+      <legend>Saúde Psicossocial</legend>
+      <label>Seu trabalho é estressante?</label>
+      <select name="trabalho_estressante">
+        <option value="">Selecione</option>
+        <option value="sim">Sim</option>
+        <option value="nao">Não</option>
+      </select>
+
+      <label>Há estresse em casa?</label>
+      <select name="estresse_em_casa">
+        <option value="">Selecione</option>
+        <option value="sim">Sim</option>
+        <option value="nao">Não</option>
+      </select>
+
+      <label>Tem vontade de participar de atividades sociais?</label>
+      <select name="atividade_social">
+        <option value="">Selecione</option>
+        <option value="sim">Sim</option>
+        <option value="nao">Não</option>
+      </select>
+
+      <label>Tem pouco interesse pelas coisas?</label>
+      <select name="pouco_interesse">
+        <option value="">Selecione</option>
+        <option value="sim">Sim</option>
+        <option value="nao">Não</option>
+      </select>
+
+      <label>Sente-se só mesmo na companhia de outros?</label>
+      <select name="sente_so">
+        <option value="">Selecione</option>
+        <option value="sim">Sim</option>
+        <option value="nao">Não</option>
+      </select>
+
+      <label>Sente pouca esperança no futuro?</label>
+      <select name="sem_esperanca">
+        <option value="">Selecione</option>
+        <option value="sim">Sim</option>
+        <option value="nao">Não</option>
+      </select>
+
+      <label>Sente-se facilmente irritado ou contrariado?</label>
+      <select name="irritabilidade">
+        <option value="">Selecione</option>
+        <option value="sim">Sim</option>
+        <option value="nao">Não</option>
+      </select>
+
+      <label>Se considera perfeccionista?</label>
+      <select name="perfeccionista">
+        <option value="">Selecione</option>
+        <option value="sim">Sim</option>
+        <option value="nao">Não</option>
+      </select>
+
+      <label>Se considera uma pessoa tensa?</label>
+      <select name="pessoa_tensa">
+        <option value="">Selecione</option>
+        <option value="sim">Sim</option>
+        <option value="nao">Não</option>
+      </select>
+
+      <label>Houve alguma mudança de vida recente? Qual?</label>
+      <input type="text" name="mudanca_vida">
+
+      <label>Vai ou já foi a um psicólogo ou assistente social?</label>
+      <select name="psicologo">
+        <option value="">Selecione</option>
+        <option value="sim">Sim</option>
+        <option value="nao">Não</option>
+      </select>
+
+      <label>Explique:</label>
+      <textarea name="explicacao_psicologo"></textarea>
+    </fieldset>
+  </div>
+
+  <div id="sono" class="tab-content">
+    <fieldset>
+      <legend>Hábitos de dormir</legend>
+      <label><input type="checkbox" name="sono[]" value="remedio_dormir"> Toma remédios ou álcool para dormir</label>
+      <label><input type="checkbox" name="sono[]" value="produto_natural"> Produto natural para dormir</label>
+      <label><input type="checkbox" name="sono[]" value="ronco"> Ronca</label>
+      <label><input type="checkbox" name="sono[]" value="falta_ar"> Falta de ar ao dormir</label>
+      <label><input type="checkbox" name="sono[]" value="respira_boca"> Respira pela boca</label>
+      <label><input type="checkbox" name="sono[]" value="bruxismo"> Aperta os dentes à noite</label>
+      <label><input type="checkbox" name="sono[]" value="mexe_pernas"> Mexe as pernas enquanto dorme</label>
+      <label><input type="checkbox" name="sono[]" value="acorda_cedo"> Acorda muito cedo</label>
+      <label><input type="checkbox" name="sono[]" value="dor_cabeca"> Dor de cabeça ao acordar</label>
+      <label><input type="checkbox" name="sono[]" value="exausto"> Sente-se exausto ao acordar</label>
+      <label><input type="checkbox" name="sono[]" value="musculos_doloridos"> Músculos doloridos ao acordar</label>
+      <label><input type="checkbox" name="sono[]" value="dorme_volante"> Dorme ao volante</label>
+      <label><input type="checkbox" name="sono[]" value="cansaco_dia"> Sente-se cansado durante o dia</label>
+      <label><input type="checkbox" name="sono[]" value="tv_na_cama"> Lê ou vê TV na cama</label>
+      <label><input type="checkbox" name="sono[]" value="dorme_bruco"> Dorme de bruços</label>
+      <label><input type="checkbox" name="sono[]" value="dois_travesseiros"> Usa dois travesseiros</label>
+      <label><input type="checkbox" name="sono[]" value="sonha_frequente"> Sonha com frequência</label>
+      <label><input type="checkbox" name="sono[]" value="cochila"> Cochila com facilidade durante o dia</label>
+    </fieldset>
+
+    <label>Qualidade do sono:</label>
+    <select name="qualidade_sono">
+      <option value="">Selecione</option>
+      <option>Muito boa</option>
+      <option>Boa</option>
+      <option>Ruim</option>
+      <option>Muito ruim</option>
+    </select>
+
+    <label>Tempo para iniciar o sono:</label>
+    <select name="tempo_sono">
+      <option value="">Selecione</option>
+      <option>0-15 minutos</option>
+      <option>16-30 minutos</option>
+      <option>31-60 minutos</option>
+      <option>Mais de 60 minutos</option>
+    </select>
+
+    <label>Quantas vezes acorda à noite?</label>
+    <select name="desperta_noite">
+      <option value="">Selecione</option>
+      <option>0-1</option>
+      <option>2-3</option>
+      <option>4-5</option>
+      <option>Mais de 5</option>
+    </select>
+
+    <label>Horas de sono por noite:</label>
+    <select name="horas_sono">
+      <option value="">Selecione</option>
+      <option>Mais de 8</option>
+      <option>7-8</option>
+      <option>5-6</option>
+      <option>Menos de 5</option>
+    </select>
+
+    <label>Sente-se sonolento durante o dia?</label>
+    <select name="sonolencia_dia">
+      <option value="">Selecione</option>
+      <option>Nunca</option>
+      <option>Um pouco</option>
+      <option>Bastante</option>
+      <option>Sempre</option>
+    </select>
+
+    <label>Dificuldade para dormir (0 = sem problemas, 10 = não consegue dormir):</label>
+    <input type="range" name="dificuldade_sono" min="0" max="10">
+
+    <fieldset>
+      <legend>Cotidiano</legend>
+      <label><input type="radio" name="cotidiano" value="cama_dia_todo"> Fica na cama o dia todo</label>
+      <label><input type="radio" name="cotidiano" value="meio_dia_parado"> Fica meio dia parado</label>
+      <label><input type="radio" name="cotidiano" value="descansa_algumas_horas"> Descansa poucas horas por dia</label>
+      <label><input type="radio" name="cotidiano" value="ativo_dia_todo"> É ativo o dia todo</label>
+    </fieldset>
+
+    <label>Você pratica exercícios físicos?</label>
+    <select name="exercicio_fisico">
+      <option value="">Selecione</option>
+      <option>Nunca</option>
+      <option>Muito pouco</option>
+      <option>Pouco</option>
+      <option>Regularmente</option>
+      <option>Intensamente</option>
+    </select>
+
+    <label>Descreva o(s) exercício(s) e a frequência semanal:</label>
+    <textarea name="descricao_exercicio"></textarea>
+
+    <label>Atividade social:</label>
+    <select name="atividade_social_nivel">
+      <option value="">Selecione</option>
+      <option>Nenhuma</option>
+      <option>Muito pouco</option>
+      <option>Moderado</option>
+      <option>Ativo</option>
+    </select>
+
+    <label>Consumo diário de café:</label>
+    <select name="cafe">
+      <option value="">Selecione</option>
+      <option>1 a 3 doses</option>
+      <option>2 a 4 doses</option>
+      <option>Mais de 6 doses</option>
+      <option>Nunca</option>
+    </select>
+
+    <label>Álcool:</label>
+    <select name="alcool">
+      <option value="">Selecione</option>
+      <option>Não é o caso</option>
+      <option>Em festas</option>
+      <option>1 a 2x ao dia</option>
+      <option>3 a 4x ao dia</option>
+      <option>Mais que 4x ao dia</option>
+    </select>
+
+    <label>Cigarro:</label>
+    <select name="cigarro">
+      <option value="">Selecione</option>
+      <option>Não é o caso</option>
+      <option>Em raras ocasiões</option>
+      <option>Menos de 1 maço/dia</option>
+      <option>Mais de 1 maço/dia</option>
+    </select>
+  </div>
+
+  <div id="finalizacao" class="tab-content">
+    <fieldset>
+      <legend>Finalização</legend>
+
+      <label>Quais resultados você espera desse tratamento?</label>
+      <textarea name="expectativas_tratamento"></textarea>
+
+      <label>Há alguma ação judicial em pendência relacionada ao seu problema?</label>
+      <select name="acao_judicial">
+        <option value="">Selecione</option>
+        <option>Sim</option>
+        <option>Não</option>
+        <option>Possivelmente</option>
+      </select>
+
+      <label>Razão para a ação judicial:</label>
+      <textarea name="motivo_acao_judicial"></textarea>
+
+      <p>(Aqui vai um check-box) Declaro que as informações deste prontuário, por mim prestadas, são verdadeiras.</p>
+
+      <label>Assinatura do paciente:</label>
+      <input type="text" name="assinatura_paciente">
+
+      <label>Data:</label>
+      <input type="date" name="data_finalizacao">
+
+      <p>(pensar numa solução digital para isso) rubrique todas as outras folhas do questionário.</p>
+    </fieldset>
+  </div>
+
 </form>
 
 <%- include('partials/footer') %>
