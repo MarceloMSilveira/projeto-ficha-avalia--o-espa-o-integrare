@@ -1,0 +1,114 @@
+<%- include('partials/header') %>
+
+<div class="tabs">
+  <button class="tab-button active" data-tab="cadastrais">1. Informações Cadastrais</button>
+  <button class="tab-button" data-tab="historico">2. Histórico Clínico</button>
+</div>
+
+<form>
+  <div id="cadastrais" class="tab-content active">
+    <label>Nome completo:</label>
+    <input type="text" name="nome">
+
+    <label>Data de nascimento:</label>
+    <input type="date" name="data_nascimento">
+
+    <label>Endereço:</label>
+    <input type="text" name="endereco">
+
+    <label>Bairro:</label>
+    <input type="text" name="bairro">
+
+    <label>Cidade:</label>
+    <input type="text" name="cidade">
+
+    <label>Estado:</label>
+    <input type="text" name="estado">
+
+    <label>CEP:</label>
+    <input type="text" name="cep">
+
+    <label>Telefone celular:</label>
+    <input type="text" name="telefone_cel">
+
+    <label>Telefone residencial:</label>
+    <input type="text" name="telefone_res">
+
+    <label>Telefone do trabalho:</label>
+    <input type="text" name="telefone_trab">
+
+    <label>E-mail:</label>
+    <input type="email" name="email">
+
+    <label>CPF:</label>
+    <input type="text" name="cpf">
+
+    <label>Profissão:</label>
+    <input type="text" name="profissao">
+
+    <label>Empresa:</label>
+    <input type="text" name="empresa">
+
+    <label>Sexo:</label>
+    <select name="sexo">
+      <option value="">Selecione</option>
+      <option value="masculino">Masculino</option>
+      <option value="feminino">Feminino</option>
+      <option value="outro">Outro</option>
+    </select>
+
+    <label>Grau de escolaridade:</label>
+    <input type="text" name="escolaridade">
+
+    <label>Nome do cônjuge:</label>
+    <input type="text" name="conjuge">
+
+    <label>Número de filhos:</label>
+    <input type="number" name="numero_filhos">
+
+    <label>Profissão do cônjuge:</label>
+    <input type="text" name="profissao_conjuge">
+
+    <label>Responsável (se menor de 18 anos):</label>
+    <input type="text" name="responsavel">
+
+    <label>Telefone do responsável:</label>
+    <input type="text" name="telefone_responsavel">
+
+    <label>Situação atual de trabalho:</label>
+    <select name="situacao_trabalho">
+      <option value="">Selecione</option>
+      <option>Tempo integral</option>
+      <option>Tempo parcial</option>
+      <option>Aposentado</option>
+      <option>Afastado</option>
+      <option>Trabalha em casa</option>
+      <option>Desempregado</option>
+      <option>Estudante integral</option>
+      <option>Estudante parcial</option>
+    </select>
+
+    <label>Estado Civil:</label>
+    <select name="estado_civil">
+      <option value="">Selecione</option>
+      <option>Solteiro</option>
+      <option>Separado</option>
+      <option>Casado</option>
+      <option>2º Casamento</option>
+      <option>Viúvo</option>
+      <option>Outros</option>
+    </select>
+
+    <label>Dentista da família (Nome):</label>
+    <input type="text" name="dentista_nome">
+
+    <label>Telefone do dentista:</label>
+    <input type="text" name="dentista_telefone">
+  </div>
+
+  <div id="historico" class="tab-content">
+    <p>Conteúdo da aba 2 (Histórico Clínico) será adicionado em breve.</p>
+  </div>
+</form>
+
+<%- include('partials/footer') %>
